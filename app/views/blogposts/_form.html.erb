@@ -1,4 +1,4 @@
-<%= form_for @blogpost, :html => {:multipart => true} do |f| %>
+<%= form_for @blogpost, url: blogposts_path, :html => {:multipart => true} do |f| %>
   <% if @blogpost.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@blogpost.errors.count, "error") %> prohibited this blogpost from being saved:</h2>
@@ -25,6 +25,6 @@
     <%= f.file_field :picture %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>

@@ -1,0 +1,7 @@
+<% @homes.each do |home| %>
+  <%= render :partial => 'homes/show', :locals => {:home => home} %>
+<% end %>
+
+<% if current_user.try(:admin) %>
+  <%= link_to "New Content", new_home_path, :class => "btn", :id => "btn" %>
+<% end %>

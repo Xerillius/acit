@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <% if current_user.try(:admin) %>
   <div class="container-fluid">
     <h1>Listing Blogposts</h1>
@@ -14,12 +12,12 @@
         </thead>
         <tbody>
           <% @blogposts.each do |blogpost| %>
-            <tr>
+            <tr style="border-top:1pt solid black;">
               <td><%= blogpost.title %></td>
               <td><%= blogpost.content %></td>
-              <td><%= link_to 'Show', blogpost %></td>
-              <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>
-              <td><%= link_to 'Delete', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show', blogpost, :class => "btn", :id => "btn" %></td>
+              <td><%= link_to 'Edit', edit_blogpost_path(blogpost), :class => "btn", :id => "btn" %></td>
+              <td><%= link_to 'Delete', blogpost, :class => "btn", :id => "btn", method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -37,5 +35,7 @@
 <br>
 
 <% if current_user.try(:admin?) %>
-  <%= link_to 'New Blogpost', new_blogpost_path, :class => "btn btn-info" %>
+  <div class="container-fluid">
+    <%= link_to 'New Blogpost', new_blogpost_path, :class => "btn", :id => "btn" %>
+  </div>
 <% end %>

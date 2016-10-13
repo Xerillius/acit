@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  resources :contacts
+  resources :galleries
+  resources :abouts
+  resources :homes
   devise_for :admins
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :blogposts
 
-  root 'home#index'
+  root 'homes#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

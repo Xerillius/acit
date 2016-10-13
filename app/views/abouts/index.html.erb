@@ -1,0 +1,30 @@
+<div id="wrap">
+  <div class="container-fluid">
+    <div class="row">
+      <% @abouts.each do |about| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="bp_show">
+          <div class="panel">
+            <div class="panel-heading">
+              <%= about.title %>
+            </div>
+            <div class="panel-body">
+              <%= about.content %>
+              <%= link_to (image_tag (about.picture_url)), about.picture_url %>
+            </div>
+            <% if current_user.try(:admin) %>
+              <div class="panel-footer">
+                <%= link_to 'Show', about %>
+                <%= link_to 'Edit', edit_about_path(about) %>
+                <%= link_to 'Destroy', about, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% if current_user.try(:admin) %>
+  <%= link_to "Add Content", new_about_path, :class => "btn", :id => "btn" %>
+<% end %>

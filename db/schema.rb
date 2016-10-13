@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011153135) do
+ActiveRecord::Schema.define(version: 20161013053941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "picture"
+    t.string   "photo"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              default: "", null: false
@@ -34,8 +51,56 @@ ActiveRecord::Schema.define(version: 20161011153135) do
   create_table "blogposts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "picture"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.text     "content"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "picture"
+    t.string   "photo"
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "picture"
+    t.string   "photo"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "picture_uploaders", force: :cascade do |t|

@@ -1,0 +1,28 @@
+<% if current_user.try(:admin) %>
+  <%= link_to 'Add Content', new_contact_path, :class => "btn", :id => "btn" %>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row">
+    <% @contacts.each do |contact| %>
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="panel">
+          <div class="panel-heading" id="panel_buttons">
+            <%= link_to 'Edit', edit_contact_path(contact), :class => "btn", :id => "btn" %>
+            <%= link_to 'Destroy', contact, :class => "btn", :id => "btn", method: :delete, data: {confirm: 'Are you sure?'} %>
+          </div>
+          <div class="panel-body">
+            <%= contact.content %>
+          </div>
+          <div class="panel-footer" id="icons">
+            <%= link_to image_tag("facebook.png", :alt => "facebook image"), "http://www.facebook.com/acanineintime", :target => '_blank' %>
+            <%= link_to image_tag("pinterest.png", :alt => "pinterest image"), "http://www.pinterest.com/hquinn", :target => '_blank' %>
+            <%= link_to image_tag("instagram.png", :alt => "instagram image"), "http://www.instagram.com/acanineintime", :target => '_blank' %>
+            <%= link_to image_tag("etsy.png", :alt => "etsy image"), "http://www.etsy.com/shop/ACanineInTime", :target => '_blank' %>
+            <%= link_to image_tag("ravelry.png", :alt => "ravelry image"), "http://www.ravelry.com", :target => '_blank' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,3 +1,26 @@
 // Place all the styles related to the Blogposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#bp_show {
+	text-align: center;
+	img {
+		width: 100%;
+	}
+}
+
+table {
+	color: black;
+}
+
+.btn {
+	background: #b5d8dd;
+}
+
+#btn {
+	color: #057182;
+}
+
+#edit_buttons {
+	text-align: center;
+}

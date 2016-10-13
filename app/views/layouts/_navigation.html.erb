@@ -11,10 +11,10 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><%= link_to "Blog", blogposts_path %></li>
-				<li><%= link_to "Gallery", root_path %></li>
-				<li><%= link_to "Shop", root_path %></li>
-				<li><%= link_to "About", root_path %></li>
-				<li><%= link_to "Contact", root_path %></li>
+				<li><%= link_to "Gallery", galleries_path %></li>
+				<li><%= link_to "Shop", "http://www.etsy.com/shop/ACanineInTime", :target => "_blank" %></li>
+				<li><%= link_to "About", abouts_path %></li>
+				<li><%= link_to "Contact", contacts_path %></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<% if signed_in? %>

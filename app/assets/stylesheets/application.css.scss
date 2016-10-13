@@ -14,11 +14,14 @@
  *= require_self
  */
 
-
-@import "bootstrap";
 @import "bootstrap-sprockets";
+@import "bootstrap";
 
 /* Navbar */
+
+body {
+	background: #86b2b8;
+}
 
 .navbar {
 	background-color: #c1d7de;
@@ -28,11 +31,38 @@
 }
 
 .navbar-header .navbar-toggle .icon-bar {
-	background-color: #3c523b;
+	background: #3c523b;
 }
 
 /* Main Wrap */
 
 #wrap {
 	margin-top: 75px;
+}
+
+.panel {
+	border-color: #c1d7de;
+}
+
+.panel-heading {
+	background: #c1d7de;
+}
+
+.container-fluid {
+	h1 {
+		text-align: center;
+	}
+}
+
+#myCarousel img {
+	margin: auto;
+	max-height: 500px;
+}
+
+#icons, #panel_buttons {
+	text-align: center;
+	img {
+		height: 25px;
+		width: 25px;
+	}
 }
