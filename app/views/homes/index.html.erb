@@ -1,5 +1,7 @@
 <% if current_user.try(:admin) %>
-  <%= link_to "New Content", new_home_path, :class => "btn", :id => "btn" %>
+	<div class="container-fluid" style="text-align: center">
+		<%= link_to "New Content", new_home_path, :class => "btn", :id => "btn" %>
+	</div>
 <% end %>
 
 <div class="container-fluid">
