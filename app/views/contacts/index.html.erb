@@ -7,10 +7,12 @@
     <% @contacts.each do |contact| %>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <div class="panel">
-          <div class="panel-heading" id="panel_buttons">
-            <%= link_to 'Edit', edit_contact_path(contact), :class => "btn", :id => "btn" %>
-            <%= link_to 'Destroy', contact, :class => "btn", :id => "btn", method: :delete, data: {confirm: 'Are you sure?'} %>
-          </div>
+          <% if current_user.try(:admin) %>
+            <div class="panel-heading" id="panel_buttons">
+              <%= link_to 'Edit', edit_contact_path(contact), :class => "btn", :id => "btn" %>
+              <%= link_to 'Destroy', contact, :class => "btn", :id => "btn", method: :delete, data: {confirm: 'Are you sure?'} %>
+            </div>
+          <% end %>
           <div class="panel-body">
             <%= contact.content %>
           </div>

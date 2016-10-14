@@ -8,11 +8,13 @@
 				<div class="panel-body">
 					<%= home.content %>
 				</div>
-				<div class="panel-footer">
-					<%= link_to 'Show', home, :class => "btn", :id => "btn" %>
-                	<%= link_to 'Edit', edit_home_path(home), :class => "btn", :id => "btn" %>
-                	<%= link_to 'Destroy', home, :class => "btn", :id => "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
-				</div>
+				<% if current_user.try(:admin) %>
+					<div class="panel-footer">
+						<%= link_to 'Show', home, :class => "btn", :id => "btn" %>
+                		<%= link_to 'Edit', edit_home_path(home), :class => "btn", :id => "btn" %>
+                		<%= link_to 'Destroy', home, :class => "btn", :id => "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
+					</div>
+				<% end %>
 			</div>
 		</div>
 	</div>
