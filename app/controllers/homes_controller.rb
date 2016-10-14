@@ -5,6 +5,8 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
+    @blog = Blogpost.last
+    @gall = Gallery.last
   end
 
   # GET /homes/1
