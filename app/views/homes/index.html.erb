@@ -1,7 +1,11 @@
 <div class="container-fluid">
 	<div class="row">
-		<%= render :partial => 'blogposts/show', :locals => {:blogpost => @blog } %>
-		<%= render :partial => 'galleries/show', :locals => {:gallery => @gall } %>
+		<div class="col-xs-12 col-md-6">
+			<%= render :partial => 'blogposts/show', :locals => {:blogpost => @blog } %>
+		</div>
+		<div class="col-xs-12 col-md-6">
+			<%= render :partial => 'galleries/show', :locals => {:gallery => @gall } %>
+		</div>
 	</div>
 </div>
 

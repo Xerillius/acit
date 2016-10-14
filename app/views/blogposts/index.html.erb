@@ -28,7 +28,9 @@
   <div class="container-fluid">
     <% @blogposts.each do |blogpost| %>
       <div class="row">
-        <%= render :partial => 'blogposts/show', :locals => {:blogpost => blogpost} %>
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2" id="bp_show">
+          <%= render :partial => 'blogposts/show', :locals => {:blogpost => blogpost} %>
+        </div>
       </div>
     <% end %>
   </div>

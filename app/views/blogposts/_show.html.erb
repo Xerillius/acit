@@ -1,11 +1,12 @@
-<div class="col-xs-12 col-sm-8 col-sm-offset-2" id="bp_show">
-	<div class="panel">
-		<div class="panel-heading">
-			<strong><%= blogpost.title %></strong>
-		</div>
-		<div class="panel-body">
-			<%= blogpost.content %>
-		</div>
+<div class="panel">
+	<div class="panel-heading">
+		<strong><%= blogpost.title %></strong>
+	</div>
+	<div class="panel-body">
+		<%= blogpost.content %>
+	</div>
+	<% if blogpost.empty? %>
+	<% else %>
 		<div class="panel-footer">
 			<%= link_to (image_tag(blogpost.picture_url, :alt => '')), blogpost.picture_url %>
 		</div>

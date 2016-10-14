@@ -13,7 +13,9 @@
 <div class="container-fluid">
   <div class="row">
     <% @galleries.reverse.each do |gallery| %>
-      <%= render :partial => 'galleries/show', :locals => {:gallery => gallery } %>
+   		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+	      <%= render :partial => 'galleries/show', :locals => {:gallery => gallery } %>
+	    </div>
     <% end %>
   </div>
 </div>
