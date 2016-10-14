@@ -1,6 +1,17 @@
-<% @homes.each do |home| %>
-  <%= render :partial => 'homes/show', :locals => {:home => home} %>
-<% end %>
+<div class="container-fluid">
+	<div class="row">
+		<%= render :partial => 'blogposts/show', :locals => {:blogpost => @blog } %>
+		<%= render :partial => 'galleries/show', :locals => {:gallery => @gall } %>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<% @homes.each do |home| %>
+			<%= render :partial => 'homes/show', :locals => {:home => home} %>
+		<% end %>
+	</div>
+</div>
 
 <% if current_user.try(:admin) %>
   <%= link_to "New Content", new_home_path, :class => "btn", :id => "btn" %>
