@@ -7,10 +7,10 @@
 		<% @homes.each do |home| %>
 			<%= render :partial => 'homes/show', :locals => {:home => home} %>
 		<% end %>
-		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="bp_show">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3" id="bp_show">
 			<%= render :partial => 'blogposts/show', :locals => {:blogpost => @blog } %>
 		</div>
-		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="bp_show">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3" id="bp_show">
 			<%= render :partial => 'galleries/show', :locals => {:gallery => @gall } %>
 		</div>
 	</div>
