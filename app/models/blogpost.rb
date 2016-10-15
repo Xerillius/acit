@@ -1,4 +1,6 @@
 class Blogpost < ActiveRecord::Base
+	has_many :comments, as: :commentable, dependent: :destroy
+
 	validates :title, presence: true
 	validates :title, length: {minimum: 1}
 	validates :content, presence: true

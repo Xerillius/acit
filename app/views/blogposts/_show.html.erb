@@ -7,6 +7,17 @@
 	</div>
 	<div class="panel-footer">
 		<%= link_to (image_tag(blogpost.picture_url, :alt => '')), blogpost.picture_url %>
+		<p>Posted <%= time_ago_in_words(blogpost.created_at) %> ago.</p>
+		<h3>Comments</h3>
+		<% if user_signed_in? %>
+			<%= form_for [blogpost, Comment.new] do |f| %>
+				<%= f.text_area :body, placeholder: "Add a comment" %><br>
+				<%= f.submit "Add Comment" %>
+			<% end %>
+		<% end %>
+		<ul>
+			<%= render(partial: 'comments/comment', collection: blogpost.comments) %>
+		</ul>
 		<% if current_user.try(:admin) %>
 			<%= link_to 'Edit', edit_blogpost_path(blogpost), :class => "btn", :id => "btn" %>
 			<%= link_to 'Back', blogposts_path, :class => "btn", :id => "btn" %>

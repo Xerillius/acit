@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   resources :homes
   devise_for :admins
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-  resources :blogposts
+  resources :blogposts do
+    resources :comments
+  end
+  resources :comments do
+    resources :comments
+  end
+
+  delete '/comments/:id' => 'comments#destroy'
 
   root 'homes#index'
   # The priority is based upon order of creation: first created -> highest priority.
