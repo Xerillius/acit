@@ -18,4 +18,5 @@
 
 /config/cloudinary.yml
 /config/secrets.yml
-/confit/database.yml
+/config/database.yml
+/config/initializers/devise.rb
