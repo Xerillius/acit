@@ -18,7 +18,7 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<% if signed_in? %>
-					<li><%= link_to "#{current_user.email.split(/@/)[0]}", edit_user_registration_path%></li>
+					<li><%= link_to "#{current_user.name}", edit_user_registration_path%></li>
 					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 				<% else %>
 					<li><%= link_to "Register", new_user_registration_path%></li>

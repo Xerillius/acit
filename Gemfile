@@ -36,7 +36,9 @@ gem 'cloudinary'
 
 # User Functionality
 gem 'devise'
-
+gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'omniauth-google-oauth2'
+gem 'google-api-client'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
