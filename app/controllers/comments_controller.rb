@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 	def create
 		@comment = @commentable.comments.new(comment_params)
 		@comment.name = current_user.name
+		@comment.userid = current_user.id
 
 		if @comment.save
 			redirect_to :back, notice: 'Your comment was successfully posted!'
